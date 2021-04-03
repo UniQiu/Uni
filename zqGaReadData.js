@@ -44,7 +44,6 @@ if (/^(,?\d+)+$/.test(zqAc)) {
 $.log('', `======== 共${zqAc.length}个账号位，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
 let myData = [];
 for (let acIdx of zqAc) {
-for (let index = 0; index < $.zqCount; index++) {
   $.idx = $.suffix(acIdx-1);
   $.acName = $.name + ($.idx || '1');
   const count = ($.getval(countKey + $.idx) || 0) - 0;
