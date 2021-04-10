@@ -32,7 +32,8 @@ const $ = new Env(`QX数据打印`);
     const myResponse = {
       status: 'HTTP/1.1 200 OK',
       headers: {
-        "Connection": "Close"
+        "Connection": "Close",
+        'Content-Type': 'text/html; charset=utf-8'
       },
       body: qxBody
     };
