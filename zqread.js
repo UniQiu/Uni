@@ -161,7 +161,7 @@ function execReadTime(checkVal) {
       }
     }
     const opts = {
-      url: `https://ios.baertt.com/v5/user/stay.json`,
+      url: `https://kandian.wkandian.com/v5/article/info/get.json`,
       headers: {
         'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
       },
@@ -250,7 +250,7 @@ function execRead(currNum, count, body) {
     let subt = '执行阅读任务';
     try {
       const opts = {
-        url: `https://ios.baertt.com/v5/article/complete.json`,
+        url: `https://kandian.wkandian.com/v5/article/info/get.json`,
         headers: {
           'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
         },
@@ -378,7 +378,7 @@ function getArticleInfo(body) {
       return;
     }
     const opts = {
-      url: `https://ios.baertt.com/v5/article/info/get.json?${body}`,
+      url: `https://kandian.wkandian.com/v5/article/info/get.json?${body}`,
       headers: {
         'User-Agent': 'KDApp/1.8.2 (iPhone; iOS 14.3; Scale/2.00)'
       },
@@ -448,7 +448,7 @@ function transfer(currNum, count, flag) {
 function gameVideo(bodyVal) {
   return new Promise((resolve, reject) => {
     const url = {
-      url: `https://ios.baertt.com/v5/Game/GameVideoReward.json`,
+      url: `https://kandian.wkandian.com/v5/article/info/get.json`,
       body: bodyVal,
     }
     $.post(url, (error, response, data) => {
