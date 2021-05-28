@@ -108,7 +108,7 @@ function getRequestData() {
         let tips = `新增第${count}条阅读数据，下次阅读第${currNum}条数据`;
         $.msg($.acName, subt, tips);
         $.setval(count + '', countKey + $.idx);
-      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/article\/info\/get\.json/)) {
+      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/article\/info\.json/)) {
         subt = '新增阅读数据new';
         let count = ($.getval(countKey + $.idx) || 0) - 0 + 1;
         $.setval($request.url.match(/\?(p=.+$)/)[1], mainKey + $.idx + '_' + count);
@@ -161,7 +161,7 @@ function execReadTime(checkVal) {
       }
     }
     const opts = {
-      url: `https://kandian.wkandian.com/v5/article/info/get.json`,
+      url: `https://kandian.wkandian.com/v5/article/info.json`,
       headers: {
         'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
       },
@@ -250,7 +250,7 @@ function execRead(currNum, count, body) {
     let subt = '执行阅读任务';
     try {
       const opts = {
-        url: `https://kandian.wkandian.com/v5/article/info/get.json`,
+        url: `https://kandian.wkandian.com/v5/article/info.json`,
         headers: {
           'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
         },
@@ -378,7 +378,7 @@ function getArticleInfo(body) {
       return;
     }
     const opts = {
-      url: `https://kandian.wkandian.com/v5/article/info/get.json?${body}`,
+      url: `https://kandian.wkandian.com/v5/article/info.json?${body}`,
       headers: {
         'User-Agent': 'KDApp/1.8.2 (iPhone; iOS 14.3; Scale/2.00)'
       },
@@ -448,7 +448,7 @@ function transfer(currNum, count, flag) {
 function gameVideo(bodyVal) {
   return new Promise((resolve, reject) => {
     const url = {
-      url: `https://kandian.wkandian.com/v5/article/info/get.json`,
+      url: `https://kandian.wkandian.com/v5/article/info.json`,
       body: bodyVal,
     }
     $.post(url, (error, response, data) => {
